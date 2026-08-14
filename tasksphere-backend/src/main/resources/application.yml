@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tasksphere-backend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/tasksphere?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: sudin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  jackson:
+    default-property-inclusion: non_null
+
+jwt:
+  # In production, load this from an environment variable / secrets manager, never hardcode.
+  secret: ${JWT_SECRET:change-this-to-a-long-random-secret-in-production-min-256-bits}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000} # 24h
+  refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000} # 7d
+
+ai-service:
+  # Base URL of the Python/FastAPI AI microservice
+  base-url: ${AI_SERVICE_URL:http://localhost:8000}
+
+logging:
+  level:
+    com.tasksphere: INFO
+    org.springframework.security: WARN
