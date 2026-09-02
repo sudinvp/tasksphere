@@ -1,19 +1,11 @@
 # TaskSphere
 
-> A full-stack task management app with an AI microservice that auto-suggests and categorizes tasks — for [WHO, e.g. "small teams juggling scattered to-dos"].
+AI-powered task management system built with React.js, Spring Boot, MySQL, and FastAPI, providing task management, JWT authentication, role-based access control, Kanban-style tracking, and AI-assisted task classification.
 
-![Demo GIF or screenshot](docs/demo.gif)
-<!-- Record a 5-10s GIF of the core flow: create a task -> AI suggests a category -> task lands on the board. -->
+**Live Demo:** Deploying soon
 
-
-**Stack:**
-![Java](https://img.shields.io/badge/Java-17-orange)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3-brightgreen)
-![React](https://img.shields.io/badge/React-18-blue)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
-<!-- Swap in your actual DB / AI service language / deployment badges -->
-
----
+**Tech Stack:**
+Java · Spring Boot · React.js · MySQL · Python · FastAPI · JWT
 
 ## What this demonstrates
 
