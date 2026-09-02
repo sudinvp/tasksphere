@@ -5,7 +5,6 @@
 ![Demo GIF or screenshot](docs/demo.gif)
 <!-- Record a 5-10s GIF of the core flow: create a task -> AI suggests a category -> task lands on the board. -->
 
-**Live demo:** https://<your-deployed-url> <!-- fill in once deployed, or write "deploying soon" -->
 
 **Stack:**
 ![Java](https://img.shields.io/badge/Java-17-orange)
