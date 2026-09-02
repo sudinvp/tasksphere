@@ -9,9 +9,11 @@ Java · Spring Boot · React.js · MySQL · Python · FastAPI · JWT
 
 ## What this demonstrates
 
-- **Multi-service architecture** — a Spring Boot backend, a React frontend, and a separate AI service that talks to the backend, not a single monolith
-- **Applied ML in a real product** — task auto-categorization isn't a notebook demo, it's wired into a live create-task flow
-- **[Fill in a third, true claim]** — e.g. auth model, deployment setup, or a scale/perf detail once you have one
+- **Full-stack application architecture** — React.js frontend, Spring Boot REST backend, MySQL database, and a separate Python FastAPI AI service.
+
+- **Secure application development** — JWT authentication and role-based access control for protected application functionality.
+
+- **AI integration in a real application** — AI-based task classification and priority prediction integrated into the task-management workflow.
 
 ## Architecture
 
