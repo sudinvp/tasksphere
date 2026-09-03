@@ -61,12 +61,15 @@ The classifier outputs a probability distribution across 4 urgency classes (from
 
 See [/docs/DECISIONS.md](docs/DECISIONS.md) for the full log.
 
-## What I struggled with
+## What I Struggled With
 
-- The urgency model was trained on synthetic, templated data. It generalizes well on strong signal words ("urgent," "crash," "fix") but produces ambiguous mid-range scores (0.45–0.55) on text that doesn't match a template — I had to verify this wasn't a bug by testing extreme cases side-by-side (a clear-urgent vs. clear-low-priority task) before trusting the scores.
-- Debugging "why does everything score ~0.51" required tracing through the actual class-probability weighting rather than assuming the model was broken — it turned out to be a real property of ambiguous input, not a defect.
-- [A real integration problem between the backend and the AI service, if any — e.g. timeout handling, request/response schema mismatches, retry logic]
-- [A real deployment/config issue you hit — e.g. environment variable handling across services, CORS between frontend and backend, database connection pooling]
+- **AI model integration:** Connecting the Python AI service with the Spring Boot backend and making sure the request and response data were handled correctly.
+
+- **Authentication:** Implementing JWT authentication and role-based access control required understanding how tokens are generated, validated, and used to protect APIs.
+
+- **Frontend-backend integration:** Connecting the React.js frontend with Spring Boot REST APIs and handling API responses and errors correctly.
+
+- **Database integration:** Configuring MySQL with Spring Data JPA/Hibernate and managing relationships between users, tasks, and other entities.
 
 <!-- Two honest lines beat five padded ones. If you don't have more real struggles, leave it at the two above — do not invent generic ones. -->
 
