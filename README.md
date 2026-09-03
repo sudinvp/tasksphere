@@ -45,13 +45,13 @@ Open http://localhost:3000 (frontend) and http://localhost:8080 (backend API).
 ## Architecture decisions (the "why")
 
 **Why Spring Boot over Node.js for the backend:**
-[Your real reasoning — e.g. team/course familiarity with Java, strong typing for a multi-role permission system, built-in Spring Security for JWT + RBAC, or prior experience from your internship]
+Built during my full-stack internship at Vstand4U Technologies, where Java and Spring Boot were the required backend stack. This turned out to be a good fit for TaskSphere specifically — Spring Security made JWT authentication and role-based access control straightforward to wire up, and Spring Data JPA's entity relationships mapped cleanly onto the users → roles → tasks structure.
 
 **Why a separate AI service instead of embedding the model in the backend:**
-[Your real reasoning — e.g. Python's ML ecosystem (scikit-learn/PyTorch) isn't available in the JVM, keeping the classifier as an independent service means it can be redeployed/retrained without touching the Java backend, or it mirrors how production ML services are actually separated from application backends]
+The task classification model uses Python's ML ecosystem, which isn't available inside the JVM. Rather than trying to run Python from Java, I split it into an independent FastAPI service that the Spring Boot backend calls over REST — this also means the classifier can be updated or retrained without touching or redeploying the main backend.
 
 **Why MySQL for task/user storage:**
-[Your real reasoning — e.g. relational structure fits naturally: users → roles → tasks → comments as foreign-keyed tables; strong familiarity from coursework/internship; works cleanly with Spring Data JPA/Hibernate out of the box]
+Continued with MySQL from my internship stack. It turned out to be a solid fit regardless — the data is inherently relational (users, roles, tasks, and comments are all foreign-keyed to each other), and it integrates cleanly with Spring Data JPA/Hibernate for CRUD operations.
 
 **Why urgency is a weighted probability score, not a fixed category:**
 The classifier outputs a probability distribution across 4 urgency classes (from title/description text) combined with days-until-due-date, producing a continuous 0–1 score rather than a hardcoded label — so a task like "Fix login failure" with a moderate deadline lands in an honest middle zone (~0.51) instead of being forced into an arbitrary bucket.
