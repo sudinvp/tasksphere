@@ -77,11 +77,11 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 9px 16px;
+  padding: 8px 16px;
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 12px;
   transition: transform 0.08s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
