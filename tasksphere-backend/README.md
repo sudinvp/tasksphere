@@ -81,5 +81,5 @@ POST /api/tasks
   WebSocket/push layer yet — there's a comment marking the hook point in `NotificationService`.
 - No refresh-token rotation yet (`jwt.refresh-expiration-ms` is defined in config but unused) —
   straightforward to add if you want silent re-auth.
-- CORS is currently locked to `http://localhost:3000` for the future React frontend; update
+- CORS is currently locked to `http://localhost:5173` for the future React frontend; update
   `SecurityConfig.corsConfigurationSource()` for other origins.
