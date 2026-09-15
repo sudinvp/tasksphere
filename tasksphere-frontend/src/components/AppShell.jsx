@@ -9,7 +9,19 @@ const NAV_ITEMS = [
   { to: '/projects', label: 'Projects', icon: ProjectsIcon },
   { to: '/tasks', label: 'My Tasks', icon: TasksIcon },
   { to: '/notifications', label: 'Notifications', icon: BellIcon },
+  { to: '/users', label: 'Users', icon: UsersIcon, adminOnly: true },
 ];
+
+function UsersIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <circle cx="7" cy="6.5" r="2.5" stroke="currentColor" strokeWidth="1.4" />
+      <path d="M2.5 15c0-2.5 2-4 4.5-4s4.5 1.5 4.5 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <circle cx="13" cy="6.5" r="2" stroke="currentColor" strokeWidth="1.3" />
+      <path d="M12 11.2c1.9.3 3.5 1.6 3.5 3.8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+    </svg>
+  );
+}
 
 function OrbitIcon() {
   return (
@@ -75,7 +87,7 @@ export default function AppShell() {
         </div>
 
         <nav className="app-shell__nav">
-          {NAV_ITEMS.map(({ to, label, icon: Icon, end }) => (
+          {NAV_ITEMS.filter((item) => !item.adminOnly || user?.role === 'ADMIN').map(({ to, label, icon: Icon, end }) => (
             <NavLink
               key={to}
               to={to}
