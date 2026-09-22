@@ -77,7 +77,7 @@ See [/docs/DECISIONS.md](docs/DECISIONS.md) for the full log.
 
 - [x] v0.1 — Core task CRUD (backend + frontend)
 - [x] v0.2 — AI auto-categorization service
-- [ ] v0.3 — Auth + multi-user support
+- [x] v0.3 — Auth + multi-user support
 - [ ] v1.0 — Public deploy
 
 ## Code Style
