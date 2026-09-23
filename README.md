@@ -38,7 +38,11 @@ docker compose up
 # or run each service manually — see /docs/architecture.md
 ```
 
-Open http://localhost:5173 (frontend) and http://localhost:8080 (backend API).
+Open:
+- Frontend: http://localhost:5173/
+- Backend API: http://localhost:8080/
+- AI Service: http://localhost:8000/
+- AI API Docs: http://localhost:8000/docs
 
 <!-- Confirm: do you have a single root-level docker-compose.yml that starts frontend + backend + AI service + MySQL together, or does each service need to be started separately right now? If separate, replace the Quick Start block with the manual steps for each service. -->
 
