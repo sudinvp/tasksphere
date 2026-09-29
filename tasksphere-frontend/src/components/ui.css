@@ -44,7 +44,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  transition: background 0.15s ease;
+  transition: background 0.13s ease;
 }
 
 .priority-arc__label {
